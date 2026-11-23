@@ -1,281 +1,195 @@
 
-
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="theme-color" content="#241735">
-
 <title>新しい恋人が欲しいあなたへ｜クリスマス占い</title>
 
 <style>
-
 *{box-sizing:border-box}
 
 body{
-
- margin:0;min-height:100vh;padding:24px 14px;
-
+ margin:0;
+ min-height:100vh;
+ padding:24px 14px;
  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-
- color:white;text-align:center;
-
+ color:white;
+ text-align:center;
  background:radial-gradient(circle at top,#765084,#382441 50%,#171126);
-
 }
 
 .container{max-width:570px;margin:24px auto}
 
 .card{
-
- background:#ffffff13;border:1px solid #ffffff35;
-
- border-radius:25px;padding:28px 22px;
-
+ background:#ffffff13;
+ border:1px solid #ffffff35;
+ border-radius:25px;
+ padding:28px 22px;
  box-shadow:0 15px 45px #09051266;
-
  backdrop-filter:blur(10px)
-
 }
 
 .hidden{display:none}
-
 .kicker{font-size:12px;letter-spacing:3px;color:#f8cce9}
-
 h1{font-size:clamp(27px,7vw,38px);line-height:1.5}
-
 h2{font-size:22px;line-height:1.6}
-
 p{line-height:1.9}
-
 .subtitle{font-size:14px;color:#f2ddec}
 
 button{
-
- width:100%;border:0;border-radius:14px;
-
- padding:16px 12px;margin-top:12px;
-
- font-size:15px;font-weight:bold;cursor:pointer;
-
+ width:100%;
+ border:0;
+ border-radius:14px;
+ padding:16px 12px;
+ margin-top:12px;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
  transition:.2s
-
 }
 
 button:hover{transform:translateY(-2px)}
-
 .primary{background:linear-gradient(110deg,#ffdfef,#e7bce9);color:#43264b}
-
 .answer{background:#ffffff18;color:white;border:1px solid #ffffff45;text-align:left}
-
 .progress{height:7px;background:#ffffff25;border-radius:10px;margin:20px 0;overflow:hidden}
-
 .progress-bar{height:100%;width:0;background:#ffd6ee;transition:.3s}
-
 .small{font-size:12px;color:#e7d3e8}
-
 .heart{font-size:48px;margin:15px}
-
 .result-icon{font-size:65px;margin:18px}
-
 .result-title{font-size:25px;color:#ffe0f1;line-height:1.6}
-
 .result-message{text-align:left;white-space:pre-line;line-height:2;font-size:15px}
-
 .advice{padding:17px;background:#ffffff14;border-radius:15px;text-align:left;line-height:1.9;margin-top:20px}
 
 .share-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-
 .share-grid button{margin:0;font-size:14px}
-
 .x{background:#111;color:white}
-
 .insta{background:linear-gradient(110deg,#ffb56e,#e65a9d,#8053cb);color:white}
-
 .tiktok{background:#111;color:white;border:1px solid #55f5ee}
-
 .other{background:#e5e8ff;color:#382747}
-
 .copy{background:#ffffff20;color:white;border:1px solid #ffffff55}
 
 .footer{font-size:11px;color:#d4bfd8;margin-top:20px}
 
-
 .ad-area{
-  margin:24px auto 15px;
-  padding:14px 8px;
-  border-radius:16px;
-  background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.18);
+ margin:24px auto 15px;
+ padding:16px 8px;
+ border-radius:16px;
+ background:rgba(255,255,255,.07);
+ border:1px solid rgba(255,255,255,.18);
 }
-.ad-label{
-  font-size:12px;
-  color:#ead5e9;
-  margin:0 0 12px;
-  letter-spacing:2px;
-}
-#randomAd{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100px;
-  overflow:hidden;
-}
-#randomAd a{
-  display:block;
-  max-width:100%;
-}
-#randomAd img{
-  display:block;
-  max-width:100%;
-  height:auto;
-  margin:auto;
-  border-radius:5px;
-}
-</style>
 
+.ad-label{
+ font-size:12px;
+ color:#ead5e9;
+ margin:0 0 12px;
+ letter-spacing:2px;
+}
+
+#randomAd{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ overflow:hidden;
+}
+
+#randomAd a{
+ display:block;
+ max-width:100%;
+}
+
+#randomAd img{
+ display:block;
+ max-width:100%;
+ height:auto;
+ margin:auto;
+ border-radius:5px;
+}
+
+</style>
 </head>
 
 <body>
-
 <div class="container">
 
 <section class="card" id="start">
-
  <div class="kicker">CHRISTMAS LOVE FORTUNE</div>
-
  <div class="heart">🎄♡❄️</div>
-
  <p class="subtitle">この冬、あなたの恋に奇跡が起こる？</p>
-
  <h1>新しい恋人が<br>欲しいあなたへ</h1>
-
  <h2>クリスマス占い</h2>
-
  <p class="subtitle">
-
   あなたの恋愛タイプと、これからの恋のヒントを診断します。<br>
-
   回答によって質問が変わる、分岐型の恋愛心理テストです。
-
  </p>
-
  <button class="primary" onclick="begin()">占いを始める ♡</button>
-
  <p class="small">全10問・直感で答えてね</p>
-
 </section>
 
 <section class="card hidden" id="quiz">
-
  <div class="kicker">YOUR LOVE STORY</div>
-
  <p id="questionCount" class="small"></p>
-
  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-
  <h2 id="questionText"></h2>
-
  <div id="answers"></div>
-
  <p class="small">あなたの直感で選んでください ♡</p>
-
 </section>
 
 <section class="card hidden" id="result">
-
  <div class="kicker">YOUR CHRISTMAS LOVE FORTUNE</div>
-
  <div class="result-icon" id="resultIcon"></div>
-
  <p class="small">あなたの恋愛タイプは...</p>
-
  <h2 class="result-title" id="resultTitle"></h2>
-
  <p class="result-message" id="resultMessage"></p>
-
  <div class="advice" id="resultAdvice"></div>
 
  <p>♡ 結果を友達にもシェアしよう ♡</p>
 
  <div class="share-grid">
-
   <button class="x" onclick="shareX()">𝕏 Xでシェア</button>
-
   <button class="insta" onclick="shareApp()">📸 Instagram</button>
-
   <button class="tiktok" onclick="shareApp()">♪ TikTok</button>
-
   <button class="other" onclick="shareApp()">💬 その他でシェア</button>
-
  </div>
+ 
+<div class="ad-area">
+ <p class="ad-label">PR｜おすすめ情報</p>
+ <div id="randomAd"></div>
+</div>
+
 
  <button class="copy" onclick="copyResult()">📋 結果をコピー</button>
-
  <button class="primary" onclick="restart()">もう一度占う ♡</button>
-
  <p class="small">※占いはエンターテインメントとしてお楽しみください。</p>
-
 </section>
 
 <div class="footer">♡ A magical Christmas is waiting for you ♡</div>
-
-
-
 </div>
+ 
 
 <script>
-
-// 各ステージにA・Bの質問を用意。
-
-// どちらの回答を選んでも必ず次のステージへ進む。
-
 const questions={
 
 s1a:["クリスマスの予定はある？",["🎄 予定がある","🌙 まだ予定はない"],["s2a","s2b"]],
-
 s1b:["今年の冬、恋愛したい気分？",["💕 恋がしたい","🕊️ 今は自由でいたい"],["s2b","s2a"]],
-
 s2a:["一緒に過ごす人はどんな相手？",["💗 気になっている人","😊 仲の良い友達"],["s3a","s3b"]],
-
 s2b:["今、気になる人はいる？",["💕 いる！","❄️ 特にいない"],["s3b","s3a"]],
-
 s3a:["好きな人ができたら自分から行動する？",["🔥 積極的に行動する","🙈 相手の様子を見る"],["s4a","s4b"]],
-
 s3b:["新しい出会いを探すなら？",["✨ 自分から探しに行く","🌷 自然な出会いを待つ"],["s4b","s4a"]],
-
 s4a:["理想のクリスマスデートは？",["🌃 夜景やイルミネーション","☕ カフェやおしゃれなお店"],["s5a","s5b"]],
-
 s4b:["理想のデートはどっち？",["🎡 一緒にいろいろ出かけたい","🏠 二人でゆっくり過ごしたい"],["s5b","s5a"]],
-
 s5a:["好きな人にはどんな態度になる？",["🥰 素直に好意を伝える","💭 恥ずかしくて隠してしまう"],["s6a","s6b"]],
-
 s5b:["相手から連絡が来たら？",["📱 すぐに返信する","💌 じっくり考えて返信する"],["s6b","s6a"]],
-
 s6a:["恋愛で一番大切にしたいことは？",["💓 ドキドキやときめき","🤍 安心感や信頼"],["s7a","s7b"]],
-
 s6b:["恋人に一番求めるものは？",["😂 一緒に笑える楽しさ","🌸 お互いを理解する優しさ"],["s7b","s7a"]],
-
 s7a:["好きな人とどんな関係になりたい？",["💍 ずっと一緒にいたい","🌷 お互いの時間も大切にしたい"],["s8a","s8b"]],
-
 s7b:["恋人との理想の距離感は？",["💕 いつも一緒にいたい","🕊️ お互い自由でいたい"],["s8b","s8a"]],
-
 s8a:["恋愛で自分の弱点だと思うところは？",["🙈 考えすぎてしまう","🔥 好きになると一直線"],["s9a","s9b"]],
-
 s8b:["恋愛で不安になるのはどんなとき？",["💭 相手の気持ちがわからないとき","🥺 なかなか会えないとき"],["s9b","s9a"]],
-
 s9a:["クリスマスに一番欲しいものは？",["💗 好きな人との特別な時間","🎁 心のこもったプレゼント"],["s10a","s10b"]],
-
 s9b:["今年のクリスマス、どんな自分でいたい？",["✨ 新しい恋に踏み出したい","🌙 自分らしく楽しみたい"],["s10b","s10a"]],
-
 s10a:["最後の質問！もし運命の人に出会えたら？",["💘 自分から声をかけたい","🌠 自然に仲良くなりたい"],["romantic","chance"]],
-
 s10b:["最後の質問！理想の恋の始まりは？",["💌 ドキドキする突然の告白","🤍 友達からゆっくり恋人へ"],["active","natural"]]
 
 };
@@ -283,281 +197,241 @@ s10b:["最後の質問！理想の恋の始まりは？",["💌 ドキドキす�
 const results={
 
 romantic:["🌃","ロマンチックな恋を夢見るタイプ",
-
 "あなたは特別な時間や思い出を大切にするロマンチスト。\n好きな人と過ごす時間に、何よりも幸せを感じるタイプです。\nこの冬は、思い出に残る恋のきっかけが訪れるかもしれません。",
-
 "気になる人がいるなら、イルミネーションや季節のイベントに誘ってみて。小さな一歩が特別な思い出になるかも。"],
 
 chance:["🌠","運命の出会いを引き寄せるタイプ",
-
 "あなたは新しい出会いや偶然のきっかけを楽しめる人。\nいつもと違う場所に出かけることで、思いがけないご縁が生まれるかもしれません。",
-
 "新しい趣味やイベントに参加してみよう。自分の世界を広げることが恋のチャンスにつながります。"],
 
 active:["✨","新しい恋をつかむ行動派タイプ",
-
 "あなたは恋愛に前向きで、チャンスを自分からつかみに行ける人。\nその積極性は大きな魅力。あなたらしい行動が新しい恋を連れてきそうです。",
-
 "出会いの場に出かけたり、気になる人に連絡したり。まずは一つ行動してみて。"],
 
 natural:["🤍","自然体で愛される安心タイプ",
-
 "あなたは相手に無理をさせず、自分も自然体でいられる関係を大切にする人。\nゆっくり信頼を育てる恋が向いていそうです。",
-
 "焦らず会話を重ねてみて。安心できる関係の中に素敵な恋が育つかもしれません。"]
 
 };
 
-let current="s1a";
-
-let step=0;
-
-let route=[];
-
-function begin(){
-
- document.getElementById("start").classList.add("hidden");
-
- document.getElementById("result").classList.add("hidden");
-
- document.getElementById("quiz").classList.remove("hidden");
-
- current="s1a";step=0;route=[];
-
- render();
-
-}
-
-function render(){
-
- const q=questions[current];
-
- document.getElementById("questionCount").textContent=
-
- "QUESTION "+(step+1)+" / 10";
-
- document.getElementById("progressBar").style.width=
-
- (step*10)+"%";
-
- document.getElementById("questionText").textContent=q[0];
-
- const area=document.getElementById("answers");
-
- area.innerHTML="";
-
- q[1].forEach((label,i)=>{
-
-  const b=document.createElement("button");
-
-  b.className="answer";
-
-  b.textContent=label;
-
-  b.onclick=()=>choose(i);
-
-  area.appendChild(b);
-
- });
-
-}
-
-function choose(i){
-
- const q=questions[current];
-
- route.push(i);
-
- step++;
-
- const next=q[2][i];
-
- if(results[next]){
-
-  finish(next);
-
-  return;
-
- }
-
- current=next;
-
- render();
-
-}
-
-function finish(key){
-
- const r=results[key];
-
- document.getElementById("quiz").classList.add("hidden");
-
- document.getElementById("result").classList.remove("hidden");
-
- document.getElementById("resultIcon").textContent=r[0];
-
- document.getElementById("resultTitle").textContent=r[1];
-
- document.getElementById("resultMessage").textContent=r[2];
-
- document.getElementById("resultAdvice").textContent="♡ あなたへの恋のアドバイス ♡\n"+r[3];
-
-showRandomAd();}
-
-function resultText(){
-
- const r=results[document.getElementById("resultTitle").textContent==="ロマンチックな恋を夢見るタイプ"?"romantic":
-
- document.getElementById("resultTitle").textContent==="運命の出会いを引き寄せるタイプ"?"chance":
-
- document.getElementById("resultTitle").textContent==="新しい恋をつかむ行動派タイプ"?"active":"natural"];
-
- return "♡ クリスマス占い ♡\n私の恋愛タイプは「"+r[1]+"」でした！\n\n"+r[2]+"\n\n#クリスマス占い #恋愛診断";
-
-}
- 
 const ads = [
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+AP7NCI+328C+3N0NDT",
  image:"https://www29.a8.net/svt/bgt?aid=261123309647&wid=009&eno=01&mid=s00000014286022006000&mc=1",
  track:"https://www10.a8.net/0.gif?a8mat=4BGS19+AP7NCI+328C+3N0NDT",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A65RZM+3PSY+1TJLZL",
  image:"https://www22.a8.net/svt/bgt?aid=261123309615&wid=009&eno=01&mid=s00000017341011009000&mc=1",
  track:"https://www15.a8.net/0.gif?a8mat=4BGS19+A65RZM+3PSY+1TJLZL",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A9QDMA+328C+ZRQ0X",
  image:"https://www26.a8.net/svt/bgt?aid=261123309621&wid=009&eno=01&mid=s00000014286006008000&mc=1",
  track:"https://www12.a8.net/0.gif?a8mat=4BGS19+A9QDMA+328C+ZRQ0X",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A07FXU+328C+15PUCX",
  image:"https://www27.a8.net/svt/bgt?aid=261123309605&wid=009&eno=01&mid=s00000014286007007000&mc=1",
  track:"https://www13.a8.net/0.gif?a8mat=4BGS19+A07FXU+328C+15PUCX",
- width:250,height:250
+ width:250
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+9XTPIQ+5XN4+5YZ75",
  image:"https://www28.a8.net/svt/bgt?aid=261123309601&wid=009&eno=01&mid=s00000027688001003000&mc=1",
  track:"https://www19.a8.net/0.gif?a8mat=4BGS19+9XTPIQ+5XN4+5YZ75",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+6Y290Y+44UC+1BNJ9D",
  image:"https://www21.a8.net/svt/bgt?aid=261123309420&wid=009&eno=01&mid=s00000019290008004000&mc=1",
  track:"https://www12.a8.net/0.gif?a8mat=4BGS19+6Y290Y+44UC+1BNJ9D",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+5IUZ02+53GG+62MDD",
  image:"https://www25.a8.net/svt/bgt?aid=261123309334&wid=009&eno=01&mid=s00000023776001020000&mc=1",
  track:"https://www13.a8.net/0.gif?a8mat=4BGS19+5IUZ02+53GG+62MDD",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+56CVAQ+22QA+IF5GH",
  image:"https://www27.a8.net/svt/bgt?aid=261123309313&wid=009&eno=01&mid=s00000009685003094000&mc=1",
  track:"https://www13.a8.net/0.gif?a8mat=4BGS19+56CVAQ+22QA+IF5GH",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=45G6PH+2HB7OY+22QA+NUES1",
  image:"https://www26.a8.net/svt/bgt?aid=251017973150&wid=009&eno=01&mid=s00000009685004005000&mc=1",
  track:"https://www10.a8.net/0.gif?a8mat=45G6PH+2HB7OY+22QA+NUES1",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=457EG9+UYQEQ+5MTE+5ZMCH",
  image:"https://www28.a8.net/svt/bgt?aid=250608105052&wid=009&eno=01&mid=s00000026285001006000&mc=1",
  track:"https://www17.a8.net/0.gif?a8mat=457EG9+UYQEQ+5MTE+5ZMCH",
- width:300,height:250
+ width:300
 },
 {
  link:"https://px.a8.net/svt/ejp?a8mat=3Z4PFM+786G4Y+3ZZC+5ZU29",
  image:"https://www28.a8.net/svt/bgt?aid=240404674437&wid=001&eno=01&mid=s00000018660001007000&mc=1",
  track:"https://www11.a8.net/0.gif?a8mat=3Z4PFM+786G4Y+3ZZC+5ZU29",
- width:300,height:250
+ width:300
 }
 ];
 
 function showRandomAd(){
  const ad=ads[Math.floor(Math.random()*ads.length)];
  const area=document.getElementById("randomAd");
+
  if(!area)return;
 
  area.innerHTML=`
-  <a href="${ad.link}" rel="nofollow sponsored" target="_blank">
+  <a href="${ad.link}"
+     target="_blank"
+     rel="nofollow sponsored noopener">
    <img src="${ad.image}"
-    width="${ad.width}" height="${ad.height}"
-    alt="おすすめ広告">
+        width="${ad.width}"
+        alt="おすすめ広告">
   </a>
-  <img src="${ad.track}" width="1" height="1" alt=""
-   style="position:absolute;width:1px;height:1px">
+  <img src="${ad.track}"
+       width="1"
+       height="1"
+       alt=""
+       style="position:absolute;width:1px;height:1px">
  `;
 }
 
+let current="s1a";
+let step=0;
+let route=[];
+
+function begin(){
+ document.getElementById("start").classList.add("hidden");
+ document.getElementById("result").classList.add("hidden");
+ document.getElementById("quiz").classList.remove("hidden");
+ current="s1a";
+ step=0;
+ route=[];
+ render();
+}
+
+function render(){
+ const q=questions[current];
+
+ document.getElementById("questionCount").textContent=
+ "QUESTION "+(step+1)+" / 10";
+
+ document.getElementById("progressBar").style.width=
+ (step*10)+"%";
+
+ document.getElementById("questionText").textContent=q[0];
+
+ const area=document.getElementById("answers");
+ area.innerHTML="";
+
+ q[1].forEach((label,i)=>{
+  const b=document.createElement("button");
+  b.className="answer";
+  b.textContent=label;
+  b.onclick=()=>choose(i);
+  area.appendChild(b);
+ });
+}
+
+function choose(i){
+ const q=questions[current];
+ route.push(i);
+ step++;
+
+ const next=q[2][i];
+
+ if(results[next]){
+  finish(next);
+  return;
+ }
+
+ current=next;
+ render();
+}
+
+
+function finish(key){
+ const r=results[key];
+
+ document.getElementById("quiz").classList.add("hidden");
+ document.getElementById("result").classList.remove("hidden");
+
+ document.getElementById("resultIcon").textContent=r[0];
+ document.getElementById("resultTitle").textContent=r[1];
+ document.getElementById("resultMessage").textContent=r[2];
+ document.getElementById("resultAdvice").textContent=
+ "♡ あなたへの恋のアドバイス ♡\n"+r[3];
+
+ showRandomAd();
+}
+
+
+function resultText(){
+ const title=document.getElementById("resultTitle").textContent;
+
+ const key=Object.keys(results).find(
+  k=>results[k][1]===title
+ );
+
+ const r=results[key];
+
+ return "♡ クリスマス占い ♡\n私の恋愛タイプは「"+r[1]+"」でした！\n\n"+
+ r[2]+"\n\n#クリスマス占い #恋愛診断";
+}
 
 function shareX(){
-
  const text=encodeURIComponent(resultText()+"\n"+location.href);
-
  window.open("https://twitter.com/intent/tweet?text="+text,"_blank");
-
 }
 
 async function shareApp(){
-
  const text=resultText();
 
  if(navigator.share){
-
-  try{await navigator.share({title:"クリスマス占い",text:text,url:location.href});}
-
-  catch(e){}
-
- }else{copyResult();}
-
+  try{
+   await navigator.share({
+    title:"クリスマス占い",
+    text:text,
+    url:location.href
+   });
+  }catch(e){}
+ }else{
+  copyResult();
+ }
 }
 
 async function copyResult(){
+ const text=resultText()+"\n"+location.href;
 
  try{
-
-  await navigator.clipboard.writeText(resultText()+"\n"+location.href);
-
+  await navigator.clipboard.writeText(text);
   alert("診断結果をコピーしました！");
-
  }catch(e){
-
   const t=document.createElement("textarea");
-
-  t.value=resultText()+"\n"+location.href;
-
-  document.body.appendChild(t);t.select();
-
-  document.execCommand("copy");t.remove();
-
+  t.value=text;
+  document.body.appendChild(t);
+  t.select();
+  document.execCommand("copy");
+  t.remove();
   alert("診断結果をコピーしました！");
-
  }
-
 }
 
 function restart(){
-
  document.getElementById("result").classList.add("hidden");
-
  document.getElementById("start").classList.remove("hidden");
-
 }
-
 </script>
 
 </body>
-
 </html>
+
