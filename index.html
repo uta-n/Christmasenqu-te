@@ -106,6 +106,38 @@ button:hover{transform:translateY(-2px)}
 
 .footer{font-size:11px;color:#d4bfd8;margin-top:20px}
 
+
+.ad-area{
+  margin:24px auto 15px;
+  padding:14px 8px;
+  border-radius:16px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.18);
+}
+.ad-label{
+  font-size:12px;
+  color:#ead5e9;
+  margin:0 0 12px;
+  letter-spacing:2px;
+}
+#randomAd{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100px;
+  overflow:hidden;
+}
+#randomAd a{
+  display:block;
+  max-width:100%;
+}
+#randomAd img{
+  display:block;
+  max-width:100%;
+  height:auto;
+  margin:auto;
+  border-radius:5px;
+}
 </style>
 
 </head>
@@ -194,6 +226,11 @@ button:hover{transform:translateY(-2px)}
 
 <div class="footer">♡ A magical Christmas is waiting for you ♡</div>
 
+
+<div class="ad-area">
+  <p class="ad-label">おすすめ情報</p>
+  <div id="randomAd"></div>
+</div>
 </div>
 
 <script>
@@ -368,7 +405,7 @@ function finish(key){
 
  document.getElementById("resultAdvice").textContent="♡ あなたへの恋のアドバイス ♡\n"+r[3];
 
-}
+showRandomAd();}
 
 function resultText(){
 
@@ -381,6 +418,92 @@ function resultText(){
  return "♡ クリスマス占い ♡\n私の恋愛タイプは「"+r[1]+"」でした！\n\n"+r[2]+"\n\n#クリスマス占い #恋愛診断";
 
 }
+ 
+const ads = [
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+AP7NCI+328C+3N0NDT",
+ image:"https://www29.a8.net/svt/bgt?aid=261123309647&wid=009&eno=01&mid=s00000014286022006000&mc=1",
+ track:"https://www10.a8.net/0.gif?a8mat=4BGS19+AP7NCI+328C+3N0NDT",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A65RZM+3PSY+1TJLZL",
+ image:"https://www22.a8.net/svt/bgt?aid=261123309615&wid=009&eno=01&mid=s00000017341011009000&mc=1",
+ track:"https://www15.a8.net/0.gif?a8mat=4BGS19+A65RZM+3PSY+1TJLZL",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A9QDMA+328C+ZRQ0X",
+ image:"https://www26.a8.net/svt/bgt?aid=261123309621&wid=009&eno=01&mid=s00000014286006008000&mc=1",
+ track:"https://www12.a8.net/0.gif?a8mat=4BGS19+A9QDMA+328C+ZRQ0X",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+A07FXU+328C+15PUCX",
+ image:"https://www27.a8.net/svt/bgt?aid=261123309605&wid=009&eno=01&mid=s00000014286007007000&mc=1",
+ track:"https://www13.a8.net/0.gif?a8mat=4BGS19+A07FXU+328C+15PUCX",
+ width:250,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+9XTPIQ+5XN4+5YZ75",
+ image:"https://www28.a8.net/svt/bgt?aid=261123309601&wid=009&eno=01&mid=s00000027688001003000&mc=1",
+ track:"https://www19.a8.net/0.gif?a8mat=4BGS19+9XTPIQ+5XN4+5YZ75",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+6Y290Y+44UC+1BNJ9D",
+ image:"https://www21.a8.net/svt/bgt?aid=261123309420&wid=009&eno=01&mid=s00000019290008004000&mc=1",
+ track:"https://www12.a8.net/0.gif?a8mat=4BGS19+6Y290Y+44UC+1BNJ9D",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+5IUZ02+53GG+62MDD",
+ image:"https://www25.a8.net/svt/bgt?aid=261123309334&wid=009&eno=01&mid=s00000023776001020000&mc=1",
+ track:"https://www13.a8.net/0.gif?a8mat=4BGS19+5IUZ02+53GG+62MDD",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=4BGS19+56CVAQ+22QA+IF5GH",
+ image:"https://www27.a8.net/svt/bgt?aid=261123309313&wid=009&eno=01&mid=s00000009685003094000&mc=1",
+ track:"https://www13.a8.net/0.gif?a8mat=4BGS19+56CVAQ+22QA+IF5GH",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=45G6PH+2HB7OY+22QA+NUES1",
+ image:"https://www26.a8.net/svt/bgt?aid=251017973150&wid=009&eno=01&mid=s00000009685004005000&mc=1",
+ track:"https://www10.a8.net/0.gif?a8mat=45G6PH+2HB7OY+22QA+NUES1",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=457EG9+UYQEQ+5MTE+5ZMCH",
+ image:"https://www28.a8.net/svt/bgt?aid=250608105052&wid=009&eno=01&mid=s00000026285001006000&mc=1",
+ track:"https://www17.a8.net/0.gif?a8mat=457EG9+UYQEQ+5MTE+5ZMCH",
+ width:300,height:250
+},
+{
+ link:"https://px.a8.net/svt/ejp?a8mat=3Z4PFM+786G4Y+3ZZC+5ZU29",
+ image:"https://www28.a8.net/svt/bgt?aid=240404674437&wid=001&eno=01&mid=s00000018660001007000&mc=1",
+ track:"https://www11.a8.net/0.gif?a8mat=3Z4PFM+786G4Y+3ZZC+5ZU29",
+ width:300,height:250
+}
+];
+
+function showRandomAd(){
+ const ad=ads[Math.floor(Math.random()*ads.length)];
+ const area=document.getElementById("randomAd");
+ if(!area)return;
+
+ area.innerHTML=`
+  <a href="${ad.link}" rel="nofollow sponsored" target="_blank">
+   <img src="${ad.image}"
+    width="${ad.width}" height="${ad.height}"
+    alt="おすすめ広告">
+  </a>
+  <img src="${ad.track}" width="1" height="1" alt=""
+   style="position:absolute;width:1px;height:1px">
+ `;
+}
+
 
 function shareX(){
 
